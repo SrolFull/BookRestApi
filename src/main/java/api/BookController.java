@@ -58,10 +58,12 @@ public class BookController {
             @RequestParam(defaultValue = "name",required = false) String sortField,
             @RequestParam(defaultValue = "ASC" ,required = false) String sortDir
             ) {
+
         List<Book> bookList = new ArrayList<>();
+
         switch (searchField){
             case "name":
-                bookList =  repository.findByNameAndSort(searchParam,Sort.by(Sort.Direction.fromString(sortDir),sortField));
+                bookList = repository.findByNameAndSort(searchParam,Sort.by(Sort.Direction.fromString(sortDir),sortField));
                 break;
             case "author":
                 bookList = repository.findByAuthorAndSort(searchParam,Sort.by(Sort.Direction.fromString(sortDir),sortField));
@@ -73,6 +75,7 @@ public class BookController {
                 bookList = repository.findByISBNCodeAndSort(searchParam,Sort.by(Sort.Direction.fromString(sortDir),sortField));
                 break;
         }
+
         return bookList;
     }
 }
