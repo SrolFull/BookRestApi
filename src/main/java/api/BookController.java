@@ -35,7 +35,7 @@ public class BookController {
 
     @GetMapping("/findBook")
     @ResponseBody
-    public List findBook(
+    public List<Book> findBook(
             @RequestParam(defaultValue = "name",required = false) String searchField,
             @RequestParam(defaultValue = "Roman",required = false) String searchParam,
             @RequestParam(defaultValue = "name",required = false) String sortField,
