@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.time.Year;
 import java.util.Objects;
 
 @Entity
@@ -15,12 +14,12 @@ public class Book {
 
     String name;
     String author;
-    Year yearOfPublishing;
+    String yearOfPublishing;
     long isbnCode;
 
     public Book(){}
 
-    Book (String name, String author, Year yearOfPublishing, long isbnCode) {
+    Book (String name, String author, String yearOfPublishing, long isbnCode) {
         this.name = name;
         this.author = author;
         this.yearOfPublishing = yearOfPublishing;
@@ -40,7 +39,7 @@ public class Book {
         return author;
     }
 
-    public Year getYearOfPublishing () {
+    public String getYearOfPublishing () {
         return yearOfPublishing;
     }
 
@@ -60,7 +59,7 @@ public class Book {
         this.name = name;
     }
 
-    public void setYearOfPublishing (Year yearOfPublishing) {
+    public void setYearOfPublishing (String yearOfPublishing) {
         this.yearOfPublishing = yearOfPublishing;
     }
 
